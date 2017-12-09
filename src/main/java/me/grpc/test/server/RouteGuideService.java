@@ -26,12 +26,12 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 
-	// ±£´æËÑË÷µÄÎ»ÖÃ
+	// ä¿å­˜æœç´¢çš„ä½ç½®
 	private final Collection<Feature> features;
 
 	private final ConcurrentMap<Point, List<RouteNote>> routeNotes = new ConcurrentHashMap<Point, List<RouteNote>>();
 
-	// ³õÊ¼»¯ËùÓĞµã
+	// åˆå§‹åŒ–æ‰€æœ‰ç‚¹
 	RouteGuideService(Collection<Feature> features) {
 		this.features = features;
 	}
@@ -39,13 +39,13 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 	@Override
 	public void getFeature(Point request,
 			StreamObserver<Feature> responseObserver) {
-		System.out.println("getFeatureµÃµ½µÄÇëÇó²ÎÊı: " + request.toString());
-		// responseObserver.onError(); ´ú±íÇëÇó³ö´í
-		responseObserver.onNext(checkFeature(request));// °ü×°·µ»ØĞÅÏ¢
-		responseObserver.onCompleted();// Íê³ÉÒ»´ÎÇëÇó
+		System.out.println("getFeatureå¾—åˆ°çš„è¯·æ±‚å‚æ•°: " + request.toString());
+		// responseObserver.onError(); ä»£è¡¨è¯·æ±‚å‡ºé”™
+		responseObserver.onNext(checkFeature(request));// åŒ…è£…è¿”å›ä¿¡æ¯
+		responseObserver.onCompleted();// å®Œæˆä¸€æ¬¡è¯·æ±‚
 	}
 
-	// ÕÒµ½¸´ºËµÄfeature
+	// æ‰¾åˆ°å¤æ ¸çš„feature
 	private Feature checkFeature(Point location) {
 		for (Feature feature : features) {
 			if (feature.getLocation().getLatitude() == location.getLatitude()
@@ -61,7 +61,7 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 	@Override
 	public void listFeatures(Rectangle request,
 			StreamObserver<Feature> responseObserver) {
-		System.out.println("listFeaturesµÃµ½µÄÇëÇó²ÎÊı: " + request.toString());
+		System.out.println("listFeatureså¾—åˆ°çš„è¯·æ±‚å‚æ•°: " + request.toString());
 		int left = min(request.getLo().getLongitude(), request.getHi()
 				.getLongitude());
 		int right = max(request.getLo().getLongitude(), request.getHi()
@@ -72,7 +72,7 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 				.getLatitude());
 
 		for (Feature feature : features) {
-			// Èç¹û²»´æÔÚÔò¼ÌĞø
+			// å¦‚æœä¸å­˜åœ¨åˆ™ç»§ç»­
 			if (!RouteGuideUtil.exists(feature)) {
 				continue;
 			}
@@ -80,11 +80,11 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 			int lat = feature.getLocation().getLatitude();
 			int lon = feature.getLocation().getLongitude();
 			if (lon >= left && lon <= right && lat >= bottom && lat <= top) {
-				// ÕÒµ½·ûºÏµÄ¾ÍĞ´Èë
+				// æ‰¾åˆ°ç¬¦åˆçš„å°±å†™å…¥
 				responseObserver.onNext(feature);
 			}
 		}
-		// ×îºó±êÊ¶Íê³É
+		// æœ€åæ ‡è¯†å®Œæˆ
 		responseObserver.onCompleted();
 	}
 
@@ -98,10 +98,10 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 			Point previous;
 			long startTime = System.nanoTime();
 
-			// ¿Í»§¶ËÃ¿Ğ´ÈëÒ»¸öPoint,·şÎñ¶Ë¾Í»áµ÷ÓÃ¸Ã·½·¨
+			// å®¢æˆ·ç«¯æ¯å†™å…¥ä¸€ä¸ªPoint,æœåŠ¡ç«¯å°±ä¼šè°ƒç”¨è¯¥æ–¹æ³•
 			@Override
 			public void onNext(Point point) {
-				System.out.println("recordRouteµÃµ½µÄÇëÇó²ÎÊı: " + point.toString());
+				System.out.println("recordRouteå¾—åˆ°çš„è¯·æ±‚å‚æ•°: " + point.toString());
 				pointCount++;
 				if (RouteGuideUtil.exists(checkFeature(point))) {
 					featureCount++;
@@ -118,7 +118,7 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 				System.err.println("Encountered error in recordRoute");
 			}
 
-			// ¿Í»§¶ËĞ´Èë½áÊøÊ±µ÷ÓÃ
+			// å®¢æˆ·ç«¯å†™å…¥ç»“æŸæ—¶è°ƒç”¨
 			@Override
 			public void onCompleted() {
 				long seconds = NANOSECONDS.toSeconds(System.nanoTime()
@@ -138,7 +138,7 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 		return new StreamObserver<RouteNote>() {
 			@Override
 			public void onNext(RouteNote note) {
-				System.out.println("routeChatµÃµ½²ÎÊı:" + note);
+				System.out.println("routeChatå¾—åˆ°å‚æ•°:" + note);
 				List<RouteNote> notes = getOrCreateNotes(note.getLocation());
 
 				for (RouteNote prevNote : notes.toArray(new RouteNote[0])) {
@@ -161,7 +161,7 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 		};
 	}
 
-	// ´´½¨¼ÇÂ¼µã
+	// åˆ›å»ºè®°å½•ç‚¹
 	private List<RouteNote> getOrCreateNotes(Point location) {
 		List<RouteNote> notes = Collections
 				.synchronizedList(new ArrayList<RouteNote>());
@@ -169,7 +169,7 @@ public class RouteGuideService extends RouteGuideGrpc.RouteGuideImplBase {
 		return prevNotes != null ? prevNotes : notes;
 	}
 
-	// ¼ÆËãµãÓëµã¾àÀë
+	// è®¡ç®—ç‚¹ä¸ç‚¹è·ç¦»
 	private static int calcDistance(Point start, Point end) {
 		double lat1 = RouteGuideUtil.getLatitude(start);
 		double lat2 = RouteGuideUtil.getLatitude(end);

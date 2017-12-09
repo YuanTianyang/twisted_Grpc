@@ -9,27 +9,27 @@ import io.grpc.ServerBuilder;
 
 public class RouteGuideServer {
 
-	private final int port;// ·şÎñ¶Ë¶Ë¿Ú
-	private final Server server;// ·şÎñÆ÷
+	private final int port;// æœåŠ¡ç«¯ç«¯å£
+	private final Server server;// æœåŠ¡å™¨
 
 	public RouteGuideServer(int port) throws IOException {
 		this.port = port;
-		// »ñÈ¡³õÊ¼»¯Êı¾İ
+		// è·å–åˆå§‹åŒ–æ•°æ®
 		List<Feature> features = RouteGuideUtil.parseFeatures(RouteGuideUtil
 				.getDefaultFeaturesFile());
-		// ³õÊ¼»¯Server²ÎÊı
+		// åˆå§‹åŒ–Serverå‚æ•°
 		server = ServerBuilder.forPort(port)
-		// Ìí¼ÓÖ¸¶¨·şÎñ
+		// æ·»åŠ æŒ‡å®šæœåŠ¡
 				.addService(new RouteGuideService(features)).build();
 	}
 
 	/**
-	 * Æô¶¯·şÎñ
+	 * å¯åŠ¨æœåŠ¡
 	 */
 	public void start() throws IOException {
 		server.start();
 		System.out.println("Server started, listening on " + port);
-		// ³ÌĞòÍË³öÊ±¹Ø±Õ×ÊÔ´
+		// ç¨‹åºé€€å‡ºæ—¶å…³é—­èµ„æº
 		Runtime.getRuntime()
 				.addShutdownHook(
 						new Thread(
@@ -42,7 +42,7 @@ public class RouteGuideServer {
 	}
 
 	/**
-	 * ¹Ø±Õ·şÎñ
+	 * å…³é—­æœåŠ¡
 	 */
 	public void stop() {
 		if (server != null) {
@@ -51,7 +51,7 @@ public class RouteGuideServer {
 	}
 
 	/**
-	 * Ê¹µÃserverÒ»Ö±´¦ÓÚÔËĞĞ×´Ì¬
+	 * ä½¿å¾—serverä¸€ç›´å¤„äºè¿è¡ŒçŠ¶æ€
 	 */
 	private void blockUntilShutdown() throws InterruptedException {
 		if (server != null) {

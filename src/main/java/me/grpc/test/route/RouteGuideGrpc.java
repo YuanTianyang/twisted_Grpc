@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- *¶¨Òå·þÎñ
+ *å®šä¹‰æœåŠ¡
  * </pre>
  */
 @javax.annotation.Generated(
@@ -184,15 +184,15 @@ public final class RouteGuideGrpc {
 
   /**
    * <pre>
-   *¶¨Òå·þÎñ
+   *å®šä¹‰æœåŠ¡
    * </pre>
    */
   public static abstract class RouteGuideImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     *µÃµ½Ö¸¶¨µãµÄfeature
-     *Ò»¸ö ¼òµ¥ RPC £¬ ¿Í»§¶ËÊ¹ÓÃ´æ¸ù·¢ËÍÇëÇóµ½·þÎñÆ÷²¢µÈ´ýÏìÓ¦·µ»Ø£¬¾ÍÏñÆ½³£µÄº¯Êýµ÷ÓÃÒ»Ñù¡£
+     *å¾—åˆ°æŒ‡å®šç‚¹çš„feature
+     *ä¸€ä¸ª ç®€å• RPC ï¼Œ å®¢æˆ·ç«¯ä½¿ç”¨å­˜æ ¹å‘é€è¯·æ±‚åˆ°æœåŠ¡å™¨å¹¶ç­‰å¾…å“åº”è¿”å›žï¼Œå°±åƒå¹³å¸¸çš„å‡½æ•°è°ƒç”¨ä¸€æ ·ã€‚
      * </pre>
      */
     public void getFeature(me.grpc.test.route.Point request,
@@ -202,9 +202,9 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *»ñÈ¡Ò»¸ö¾ØÐÎÄÚµÄµã
-     *Ò»¸ö ·þÎñÆ÷¶ËÁ÷Ê½ RPC £¬ ¿Í»§¶Ë·¢ËÍÇëÇóµ½·þÎñÆ÷£¬ÄÃµ½Ò»¸öÁ÷È¥¶ÁÈ¡·µ»ØµÄÏûÏ¢ÐòÁÐ¡£ ¿Í»§¶Ë¶ÁÈ¡·µ»ØµÄÁ÷£¬
-     *Ö±µ½ÀïÃæÃ»ÓÐÈÎºÎÏûÏ¢¡£´ÓÀý×ÓÖÐ¿ÉÒÔ¿´³ö£¬Í¨¹ýÔÚ ÏìÓ¦ ÀàÐÍÇ°²åÈë stream ¹Ø¼ü×Ö£¬¿ÉÒÔÖ¸¶¨Ò»¸ö·þÎñÆ÷¶ËµÄÁ÷·½·¨¡£
+     *èŽ·å–ä¸€ä¸ªçŸ©å½¢å†…çš„ç‚¹
+     *ä¸€ä¸ª æœåŠ¡å™¨ç«¯æµå¼ RPC ï¼Œ å®¢æˆ·ç«¯å‘é€è¯·æ±‚åˆ°æœåŠ¡å™¨ï¼Œæ‹¿åˆ°ä¸€ä¸ªæµåŽ»è¯»å–è¿”å›žçš„æ¶ˆæ¯åºåˆ—ã€‚ å®¢æˆ·ç«¯è¯»å–è¿”å›žçš„æµï¼Œ
+     *ç›´åˆ°é‡Œé¢æ²¡æœ‰ä»»ä½•æ¶ˆæ¯ã€‚ä»Žä¾‹å­ä¸­å¯ä»¥çœ‹å‡ºï¼Œé€šè¿‡åœ¨ å“åº” ç±»åž‹å‰æ’å…¥ stream å…³é”®å­—ï¼Œå¯ä»¥æŒ‡å®šä¸€ä¸ªæœåŠ¡å™¨ç«¯çš„æµæ–¹æ³•ã€‚
      * </pre>
      */
     public void listFeatures(me.grpc.test.route.Rectangle request,
@@ -214,9 +214,9 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *¼ÇÂ¼¸Ãµã
-     *Ò»¸ö ¿Í»§¶ËÁ÷Ê½ RPC £¬ ¿Í»§¶ËÐ´ÈëÒ»¸öÏûÏ¢ÐòÁÐ²¢½«Æä·¢ËÍµ½·þÎñÆ÷£¬Í¬ÑùÒ²ÊÇÊ¹ÓÃÁ÷¡£Ò»µ©¿Í»§¶ËÍê³ÉÐ´ÈëÏûÏ¢£¬
-     *ËüµÈ´ý·þÎñÆ÷Íê³É¶ÁÈ¡·µ»ØËüµÄÏìÓ¦¡£Í¨¹ýÔÚ ÇëÇó ÀàÐÍÇ°Ö¸¶¨ stream ¹Ø¼ü×ÖÀ´Ö¸¶¨Ò»¸ö¿Í»§¶ËµÄÁ÷·½·¨¡£
+     *è®°å½•è¯¥ç‚¹
+     *ä¸€ä¸ª å®¢æˆ·ç«¯æµå¼ RPC ï¼Œ å®¢æˆ·ç«¯å†™å…¥ä¸€ä¸ªæ¶ˆæ¯åºåˆ—å¹¶å°†å…¶å‘é€åˆ°æœåŠ¡å™¨ï¼ŒåŒæ ·ä¹Ÿæ˜¯ä½¿ç”¨æµã€‚ä¸€æ—¦å®¢æˆ·ç«¯å®Œæˆå†™å…¥æ¶ˆæ¯ï¼Œ
+     *å®ƒç­‰å¾…æœåŠ¡å™¨å®Œæˆè¯»å–è¿”å›žå®ƒçš„å“åº”ã€‚é€šè¿‡åœ¨ è¯·æ±‚ ç±»åž‹å‰æŒ‡å®š stream å…³é”®å­—æ¥æŒ‡å®šä¸€ä¸ªå®¢æˆ·ç«¯çš„æµæ–¹æ³•ã€‚
      * </pre>
      */
     public io.grpc.stub.StreamObserver<me.grpc.test.route.Point> recordRoute(
@@ -226,10 +226,10 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *Â·ÓÉ½»Á÷
-     *Ò»¸ö Ë«ÏòÁ÷Ê½ RPC ÊÇË«·½Ê¹ÓÃ¶ÁÐ´Á÷È¥·¢ËÍÒ»¸öÏûÏ¢ÐòÁÐ¡£Á½¸öÁ÷¶ÀÁ¢²Ù×÷£¬Òò´Ë¿Í»§¶ËºÍ·þÎñÆ÷
-     *¿ÉÒÔÒÔÈÎÒâÏ²»¶µÄË³Ðò¶ÁÐ´£º±ÈÈç£¬ ·þÎñÆ÷¿ÉÒÔÔÚÐ´ÈëÏìÓ¦Ç°µÈ´ý½ÓÊÕËùÓÐµÄ¿Í»§¶ËÏûÏ¢£¬»òÕß¿ÉÒÔ½»Ìæ µÄ¶ÁÈ¡ºÍÐ´ÈëÏûÏ¢£¬
-     *»òÕßÆäËû¶ÁÐ´µÄ×éºÏ¡£Ã¿¸öÁ÷ÖÐµÄÏûÏ¢Ë³Ðò±»Ô¤Áô¡£Äã¿ÉÒÔÍ¨¹ýÔÚÇëÇóºÍÏìÓ¦Ç°¼Ó stream ¹Ø¼ü×ÖÈ¥ÖÆ¶¨·½·¨µÄÀàÐÍ¡£
+     *è·¯ç”±äº¤æµ
+     *ä¸€ä¸ª åŒå‘æµå¼ RPC æ˜¯åŒæ–¹ä½¿ç”¨è¯»å†™æµåŽ»å‘é€ä¸€ä¸ªæ¶ˆæ¯åºåˆ—ã€‚ä¸¤ä¸ªæµç‹¬ç«‹æ“ä½œï¼Œå› æ­¤å®¢æˆ·ç«¯å’ŒæœåŠ¡å™¨
+     *å¯ä»¥ä»¥ä»»æ„å–œæ¬¢çš„é¡ºåºè¯»å†™ï¼šæ¯”å¦‚ï¼Œ æœåŠ¡å™¨å¯ä»¥åœ¨å†™å…¥å“åº”å‰ç­‰å¾…æŽ¥æ”¶æ‰€æœ‰çš„å®¢æˆ·ç«¯æ¶ˆæ¯ï¼Œæˆ–è€…å¯ä»¥äº¤æ›¿ çš„è¯»å–å’Œå†™å…¥æ¶ˆæ¯ï¼Œ
+     *æˆ–è€…å…¶ä»–è¯»å†™çš„ç»„åˆã€‚æ¯ä¸ªæµä¸­çš„æ¶ˆæ¯é¡ºåºè¢«é¢„ç•™ã€‚ä½ å¯ä»¥é€šè¿‡åœ¨è¯·æ±‚å’Œå“åº”å‰åŠ  stream å…³é”®å­—åŽ»åˆ¶å®šæ–¹æ³•çš„ç±»åž‹ã€‚
      * </pre>
      */
     public io.grpc.stub.StreamObserver<me.grpc.test.route.RouteNote> routeChat(
@@ -273,7 +273,7 @@ public final class RouteGuideGrpc {
 
   /**
    * <pre>
-   *¶¨Òå·þÎñ
+   *å®šä¹‰æœåŠ¡
    * </pre>
    */
   public static final class RouteGuideStub extends io.grpc.stub.AbstractStub<RouteGuideStub> {
@@ -294,8 +294,8 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *µÃµ½Ö¸¶¨µãµÄfeature
-     *Ò»¸ö ¼òµ¥ RPC £¬ ¿Í»§¶ËÊ¹ÓÃ´æ¸ù·¢ËÍÇëÇóµ½·þÎñÆ÷²¢µÈ´ýÏìÓ¦·µ»Ø£¬¾ÍÏñÆ½³£µÄº¯Êýµ÷ÓÃÒ»Ñù¡£
+     *å¾—åˆ°æŒ‡å®šç‚¹çš„feature
+     *ä¸€ä¸ª ç®€å• RPC ï¼Œ å®¢æˆ·ç«¯ä½¿ç”¨å­˜æ ¹å‘é€è¯·æ±‚åˆ°æœåŠ¡å™¨å¹¶ç­‰å¾…å“åº”è¿”å›žï¼Œå°±åƒå¹³å¸¸çš„å‡½æ•°è°ƒç”¨ä¸€æ ·ã€‚
      * </pre>
      */
     public void getFeature(me.grpc.test.route.Point request,
@@ -306,9 +306,9 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *»ñÈ¡Ò»¸ö¾ØÐÎÄÚµÄµã
-     *Ò»¸ö ·þÎñÆ÷¶ËÁ÷Ê½ RPC £¬ ¿Í»§¶Ë·¢ËÍÇëÇóµ½·þÎñÆ÷£¬ÄÃµ½Ò»¸öÁ÷È¥¶ÁÈ¡·µ»ØµÄÏûÏ¢ÐòÁÐ¡£ ¿Í»§¶Ë¶ÁÈ¡·µ»ØµÄÁ÷£¬
-     *Ö±µ½ÀïÃæÃ»ÓÐÈÎºÎÏûÏ¢¡£´ÓÀý×ÓÖÐ¿ÉÒÔ¿´³ö£¬Í¨¹ýÔÚ ÏìÓ¦ ÀàÐÍÇ°²åÈë stream ¹Ø¼ü×Ö£¬¿ÉÒÔÖ¸¶¨Ò»¸ö·þÎñÆ÷¶ËµÄÁ÷·½·¨¡£
+     *èŽ·å–ä¸€ä¸ªçŸ©å½¢å†…çš„ç‚¹
+     *ä¸€ä¸ª æœåŠ¡å™¨ç«¯æµå¼ RPC ï¼Œ å®¢æˆ·ç«¯å‘é€è¯·æ±‚åˆ°æœåŠ¡å™¨ï¼Œæ‹¿åˆ°ä¸€ä¸ªæµåŽ»è¯»å–è¿”å›žçš„æ¶ˆæ¯åºåˆ—ã€‚ å®¢æˆ·ç«¯è¯»å–è¿”å›žçš„æµï¼Œ
+     *ç›´åˆ°é‡Œé¢æ²¡æœ‰ä»»ä½•æ¶ˆæ¯ã€‚ä»Žä¾‹å­ä¸­å¯ä»¥çœ‹å‡ºï¼Œé€šè¿‡åœ¨ å“åº” ç±»åž‹å‰æ’å…¥ stream å…³é”®å­—ï¼Œå¯ä»¥æŒ‡å®šä¸€ä¸ªæœåŠ¡å™¨ç«¯çš„æµæ–¹æ³•ã€‚
      * </pre>
      */
     public void listFeatures(me.grpc.test.route.Rectangle request,
@@ -319,9 +319,9 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *¼ÇÂ¼¸Ãµã
-     *Ò»¸ö ¿Í»§¶ËÁ÷Ê½ RPC £¬ ¿Í»§¶ËÐ´ÈëÒ»¸öÏûÏ¢ÐòÁÐ²¢½«Æä·¢ËÍµ½·þÎñÆ÷£¬Í¬ÑùÒ²ÊÇÊ¹ÓÃÁ÷¡£Ò»µ©¿Í»§¶ËÍê³ÉÐ´ÈëÏûÏ¢£¬
-     *ËüµÈ´ý·þÎñÆ÷Íê³É¶ÁÈ¡·µ»ØËüµÄÏìÓ¦¡£Í¨¹ýÔÚ ÇëÇó ÀàÐÍÇ°Ö¸¶¨ stream ¹Ø¼ü×ÖÀ´Ö¸¶¨Ò»¸ö¿Í»§¶ËµÄÁ÷·½·¨¡£
+     *è®°å½•è¯¥ç‚¹
+     *ä¸€ä¸ª å®¢æˆ·ç«¯æµå¼ RPC ï¼Œ å®¢æˆ·ç«¯å†™å…¥ä¸€ä¸ªæ¶ˆæ¯åºåˆ—å¹¶å°†å…¶å‘é€åˆ°æœåŠ¡å™¨ï¼ŒåŒæ ·ä¹Ÿæ˜¯ä½¿ç”¨æµã€‚ä¸€æ—¦å®¢æˆ·ç«¯å®Œæˆå†™å…¥æ¶ˆæ¯ï¼Œ
+     *å®ƒç­‰å¾…æœåŠ¡å™¨å®Œæˆè¯»å–è¿”å›žå®ƒçš„å“åº”ã€‚é€šè¿‡åœ¨ è¯·æ±‚ ç±»åž‹å‰æŒ‡å®š stream å…³é”®å­—æ¥æŒ‡å®šä¸€ä¸ªå®¢æˆ·ç«¯çš„æµæ–¹æ³•ã€‚
      * </pre>
      */
     public io.grpc.stub.StreamObserver<me.grpc.test.route.Point> recordRoute(
@@ -332,10 +332,10 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *Â·ÓÉ½»Á÷
-     *Ò»¸ö Ë«ÏòÁ÷Ê½ RPC ÊÇË«·½Ê¹ÓÃ¶ÁÐ´Á÷È¥·¢ËÍÒ»¸öÏûÏ¢ÐòÁÐ¡£Á½¸öÁ÷¶ÀÁ¢²Ù×÷£¬Òò´Ë¿Í»§¶ËºÍ·þÎñÆ÷
-     *¿ÉÒÔÒÔÈÎÒâÏ²»¶µÄË³Ðò¶ÁÐ´£º±ÈÈç£¬ ·þÎñÆ÷¿ÉÒÔÔÚÐ´ÈëÏìÓ¦Ç°µÈ´ý½ÓÊÕËùÓÐµÄ¿Í»§¶ËÏûÏ¢£¬»òÕß¿ÉÒÔ½»Ìæ µÄ¶ÁÈ¡ºÍÐ´ÈëÏûÏ¢£¬
-     *»òÕßÆäËû¶ÁÐ´µÄ×éºÏ¡£Ã¿¸öÁ÷ÖÐµÄÏûÏ¢Ë³Ðò±»Ô¤Áô¡£Äã¿ÉÒÔÍ¨¹ýÔÚÇëÇóºÍÏìÓ¦Ç°¼Ó stream ¹Ø¼ü×ÖÈ¥ÖÆ¶¨·½·¨µÄÀàÐÍ¡£
+     *è·¯ç”±äº¤æµ
+     *ä¸€ä¸ª åŒå‘æµå¼ RPC æ˜¯åŒæ–¹ä½¿ç”¨è¯»å†™æµåŽ»å‘é€ä¸€ä¸ªæ¶ˆæ¯åºåˆ—ã€‚ä¸¤ä¸ªæµç‹¬ç«‹æ“ä½œï¼Œå› æ­¤å®¢æˆ·ç«¯å’ŒæœåŠ¡å™¨
+     *å¯ä»¥ä»¥ä»»æ„å–œæ¬¢çš„é¡ºåºè¯»å†™ï¼šæ¯”å¦‚ï¼Œ æœåŠ¡å™¨å¯ä»¥åœ¨å†™å…¥å“åº”å‰ç­‰å¾…æŽ¥æ”¶æ‰€æœ‰çš„å®¢æˆ·ç«¯æ¶ˆæ¯ï¼Œæˆ–è€…å¯ä»¥äº¤æ›¿ çš„è¯»å–å’Œå†™å…¥æ¶ˆæ¯ï¼Œ
+     *æˆ–è€…å…¶ä»–è¯»å†™çš„ç»„åˆã€‚æ¯ä¸ªæµä¸­çš„æ¶ˆæ¯é¡ºåºè¢«é¢„ç•™ã€‚ä½ å¯ä»¥é€šè¿‡åœ¨è¯·æ±‚å’Œå“åº”å‰åŠ  stream å…³é”®å­—åŽ»åˆ¶å®šæ–¹æ³•çš„ç±»åž‹ã€‚
      * </pre>
      */
     public io.grpc.stub.StreamObserver<me.grpc.test.route.RouteNote> routeChat(
@@ -347,7 +347,7 @@ public final class RouteGuideGrpc {
 
   /**
    * <pre>
-   *¶¨Òå·þÎñ
+   *å®šä¹‰æœåŠ¡
    * </pre>
    */
   public static final class RouteGuideBlockingStub extends io.grpc.stub.AbstractStub<RouteGuideBlockingStub> {
@@ -368,8 +368,8 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *µÃµ½Ö¸¶¨µãµÄfeature
-     *Ò»¸ö ¼òµ¥ RPC £¬ ¿Í»§¶ËÊ¹ÓÃ´æ¸ù·¢ËÍÇëÇóµ½·þÎñÆ÷²¢µÈ´ýÏìÓ¦·µ»Ø£¬¾ÍÏñÆ½³£µÄº¯Êýµ÷ÓÃÒ»Ñù¡£
+     *å¾—åˆ°æŒ‡å®šç‚¹çš„feature
+     *ä¸€ä¸ª ç®€å• RPC ï¼Œ å®¢æˆ·ç«¯ä½¿ç”¨å­˜æ ¹å‘é€è¯·æ±‚åˆ°æœåŠ¡å™¨å¹¶ç­‰å¾…å“åº”è¿”å›žï¼Œå°±åƒå¹³å¸¸çš„å‡½æ•°è°ƒç”¨ä¸€æ ·ã€‚
      * </pre>
      */
     public me.grpc.test.route.Feature getFeature(me.grpc.test.route.Point request) {
@@ -379,9 +379,9 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *»ñÈ¡Ò»¸ö¾ØÐÎÄÚµÄµã
-     *Ò»¸ö ·þÎñÆ÷¶ËÁ÷Ê½ RPC £¬ ¿Í»§¶Ë·¢ËÍÇëÇóµ½·þÎñÆ÷£¬ÄÃµ½Ò»¸öÁ÷È¥¶ÁÈ¡·µ»ØµÄÏûÏ¢ÐòÁÐ¡£ ¿Í»§¶Ë¶ÁÈ¡·µ»ØµÄÁ÷£¬
-     *Ö±µ½ÀïÃæÃ»ÓÐÈÎºÎÏûÏ¢¡£´ÓÀý×ÓÖÐ¿ÉÒÔ¿´³ö£¬Í¨¹ýÔÚ ÏìÓ¦ ÀàÐÍÇ°²åÈë stream ¹Ø¼ü×Ö£¬¿ÉÒÔÖ¸¶¨Ò»¸ö·þÎñÆ÷¶ËµÄÁ÷·½·¨¡£
+     *èŽ·å–ä¸€ä¸ªçŸ©å½¢å†…çš„ç‚¹
+     *ä¸€ä¸ª æœåŠ¡å™¨ç«¯æµå¼ RPC ï¼Œ å®¢æˆ·ç«¯å‘é€è¯·æ±‚åˆ°æœåŠ¡å™¨ï¼Œæ‹¿åˆ°ä¸€ä¸ªæµåŽ»è¯»å–è¿”å›žçš„æ¶ˆæ¯åºåˆ—ã€‚ å®¢æˆ·ç«¯è¯»å–è¿”å›žçš„æµï¼Œ
+     *ç›´åˆ°é‡Œé¢æ²¡æœ‰ä»»ä½•æ¶ˆæ¯ã€‚ä»Žä¾‹å­ä¸­å¯ä»¥çœ‹å‡ºï¼Œé€šè¿‡åœ¨ å“åº” ç±»åž‹å‰æ’å…¥ stream å…³é”®å­—ï¼Œå¯ä»¥æŒ‡å®šä¸€ä¸ªæœåŠ¡å™¨ç«¯çš„æµæ–¹æ³•ã€‚
      * </pre>
      */
     public java.util.Iterator<me.grpc.test.route.Feature> listFeatures(
@@ -393,7 +393,7 @@ public final class RouteGuideGrpc {
 
   /**
    * <pre>
-   *¶¨Òå·þÎñ
+   *å®šä¹‰æœåŠ¡
    * </pre>
    */
   public static final class RouteGuideFutureStub extends io.grpc.stub.AbstractStub<RouteGuideFutureStub> {
@@ -414,8 +414,8 @@ public final class RouteGuideGrpc {
 
     /**
      * <pre>
-     *µÃµ½Ö¸¶¨µãµÄfeature
-     *Ò»¸ö ¼òµ¥ RPC £¬ ¿Í»§¶ËÊ¹ÓÃ´æ¸ù·¢ËÍÇëÇóµ½·þÎñÆ÷²¢µÈ´ýÏìÓ¦·µ»Ø£¬¾ÍÏñÆ½³£µÄº¯Êýµ÷ÓÃÒ»Ñù¡£
+     *å¾—åˆ°æŒ‡å®šç‚¹çš„feature
+     *ä¸€ä¸ª ç®€å• RPC ï¼Œ å®¢æˆ·ç«¯ä½¿ç”¨å­˜æ ¹å‘é€è¯·æ±‚åˆ°æœåŠ¡å™¨å¹¶ç­‰å¾…å“åº”è¿”å›žï¼Œå°±åƒå¹³å¸¸çš„å‡½æ•°è°ƒç”¨ä¸€æ ·ã€‚
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<me.grpc.test.route.Feature> getFeature(

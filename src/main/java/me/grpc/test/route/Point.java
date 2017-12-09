@@ -5,7 +5,7 @@ package me.grpc.test.route;
 
 /**
  * <pre>
- *´ú±í¾­Î³¶È
+ *ä»£è¡¨ç»çº¬åº¦
  * </pre>
  *
  * Protobuf type {@code Point}
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *´ú±í¾­Î³¶È
+   *ä»£è¡¨ç»çº¬åº¦
    * </pre>
    *
    * Protobuf type {@code Point}

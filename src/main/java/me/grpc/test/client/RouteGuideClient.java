@@ -21,28 +21,28 @@ import io.grpc.stub.StreamObserver;
 
 public class RouteGuideClient {
 
-	private final ManagedChannel channel;// grpcĞÅµÀ,ĞèÒªÖ¸¶¨¶Ë¿ÚºÍµØÖ·
-	private final RouteGuideGrpc.RouteGuideBlockingStub blockingStub;// ×èÈû/Í¬²½´æ¸ù
-	private final RouteGuideGrpc.RouteGuideStub asyncStub;// ·Ç×èÈû,Òì²½´æ¸ù
+	private final ManagedChannel channel;// grpcä¿¡é“,éœ€è¦æŒ‡å®šç«¯å£å’Œåœ°å€
+	private final RouteGuideGrpc.RouteGuideBlockingStub blockingStub;// é˜»å¡/åŒæ­¥å­˜æ ¹
+	private final RouteGuideGrpc.RouteGuideStub asyncStub;// éé˜»å¡,å¼‚æ­¥å­˜æ ¹
 
 	public RouteGuideClient(String host, int port) {
-		// ´´½¨ĞÅµÀ
+		// åˆ›å»ºä¿¡é“
 		channel = ManagedChannelBuilder.forAddress(host, port)
 				.usePlaintext(true).build();
-		// ´´½¨´æ¸ù
+		// åˆ›å»ºå­˜æ ¹
 		blockingStub = RouteGuideGrpc.newBlockingStub(channel);
 		asyncStub = RouteGuideGrpc.newStub(channel);
 	}
 
 	/**
-	 * ¹Ø±Õ·½·¨
+	 * å…³é—­æ–¹æ³•
 	 */
 	public void shutdown() throws InterruptedException {
 		channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
 	}
 
 	/**
-	 * Ö÷·½·¨ÖĞµ÷ÓÃÕâÒ»Ğ©º¯ÊıµÄÖ´ĞĞ
+	 * ä¸»æ–¹æ³•ä¸­è°ƒç”¨è¿™ä¸€äº›å‡½æ•°çš„æ‰§è¡Œ
 	 */
 	public static void main(String[] args) throws InterruptedException {
 		List<Feature> features;
@@ -55,12 +55,12 @@ public class RouteGuideClient {
 		}
 		RouteGuideClient client = new RouteGuideClient("localhost", 50051);
 		try {
-			 client.getFeature(409146138, -746188906);//³É¹¦°¸Àı
-			 client.getFeature(0, 0);//Ê§°Ü°¸Àı
+			 client.getFeature(409146138, -746188906);//æˆåŠŸæ¡ˆä¾‹
+			 client.getFeature(0, 0);//å¤±è´¥æ¡ˆä¾‹
 			 client.listFeatures(400000000, -750000000, 420000000,
 			 -730000000);
 			 client.recordRoute(features, 10);
-			 System.out.println("RouteGuideClient.main()--------µ÷ÓÃrouteChat----------");
+			 System.out.println("RouteGuideClient.main()--------è°ƒç”¨routeChat----------");
 			CountDownLatch finishLatch = client.routeChat();
 
 			if (!finishLatch.await(1, TimeUnit.MINUTES)) {
@@ -71,22 +71,22 @@ public class RouteGuideClient {
 		}
 	}
 
-	// 1.¼òµ¥grpc
+	// 1.ç®€å•grpc
 	public void getFeature(int lat, int lon) {
 		System.out.println("start getFeature");
 		Point request = Point.newBuilder().setLatitude(lat).setLongitude(lon)
 				.build();
 		Feature feature;
 		try {
-			// Í¬²½×èÈûµ÷ÓÃ
+			// åŒæ­¥é˜»å¡è°ƒç”¨
 			feature = blockingStub.getFeature(request);
-			System.out.println("getFeature·şÎñ¶Ë·µ»Ø :" + feature);
+			System.out.println("getFeatureæœåŠ¡ç«¯è¿”å› :" + feature);
 		} catch (StatusRuntimeException e) {
 			System.out.println("RPC failed " + e.getStatus());
 		}
 	}
 
-	// 2.·şÎñ¶ËÁ÷Ê½RPC
+	// 2.æœåŠ¡ç«¯æµå¼RPC
 	public void listFeatures(int lowLat, int lowLon, int hiLat, int hiLon) {
 		System.out.println("start listFeatures");
 		Rectangle request = Rectangle
@@ -100,23 +100,23 @@ public class RouteGuideClient {
 			features = blockingStub.listFeatures(request);
 			for (int i = 1; features.hasNext(); i++) {
 				Feature feature = features.next();
-				System.out.println("listFeatures·şÎñ¶Ë·µ»Ø :" + feature);
+				System.out.println("listFeaturesæœåŠ¡ç«¯è¿”å› :" + feature);
 			}
 		} catch (Exception e) {
 			System.out.println("RPC failed " + e.getMessage());
 		}
 	}
 
-	// ¿Í»§¶ËÁ÷Ê½RPC
+	// å®¢æˆ·ç«¯æµå¼RPC
 	public void recordRoute(List<Feature> features, int numPoints)
 			throws InterruptedException {
 		System.out.println("start recordRoute");
 		final CountDownLatch finishLatch = new CountDownLatch(1);
-		// ½¨Ò»¸öÓ¦´ğÕß½ÓÊÜ·µ»ØÊı¾İ
+		// å»ºä¸€ä¸ªåº”ç­”è€…æ¥å—è¿”å›æ•°æ®
 		StreamObserver<RouteSummary> responseObserver = new StreamObserver<RouteSummary>() {
 			@Override
 			public void onNext(RouteSummary summary) {
-				System.out.println("recordRoute·şÎñ¶Ë·µ»Ø :" + summary);
+				System.out.println("recordRouteæœåŠ¡ç«¯è¿”å› :" + summary);
 			}
 
 			@Override
@@ -131,7 +131,7 @@ public class RouteGuideClient {
 				finishLatch.countDown();
 			}
 		};
-		// ¿Í»§¶ËĞ´Èë²Ù×÷
+		// å®¢æˆ·ç«¯å†™å…¥æ“ä½œ
 		StreamObserver<Point> requestObserver = asyncStub
 				.recordRoute(responseObserver);
 		Random random = new Random();
@@ -139,7 +139,7 @@ public class RouteGuideClient {
 			for (int i = 0; i < numPoints; ++i) {
 				int index = random.nextInt(features.size());
 				Point point = features.get(index).getLocation();
-				System.out.println("¿Í»§¶ËĞ´Èëpoint:" + point);
+				System.out.println("å®¢æˆ·ç«¯å†™å…¥point:" + point);
 				requestObserver.onNext(point);
 
 				Thread.sleep(random.nextInt(1000) + 500);
@@ -151,7 +151,7 @@ public class RouteGuideClient {
 			requestObserver.onError(e);
 			throw e;
 		}
-		// ±êÊ¶ÒÑ¾­Ğ´Íê
+		// æ ‡è¯†å·²ç»å†™å®Œ
 		requestObserver.onCompleted();
 		// Receiving happens asynchronously
 		if (!finishLatch.await(1, TimeUnit.MINUTES)) {
@@ -159,7 +159,7 @@ public class RouteGuideClient {
 		}
 	}
 
-	// Ë«ÏòÁ÷Ê½RPC
+	// åŒå‘æµå¼RPC
 	public CountDownLatch routeChat() {
 		System.out.println("start routeChat");
 		final CountDownLatch finishLatch = new CountDownLatch(1);
@@ -167,7 +167,7 @@ public class RouteGuideClient {
 				.routeChat(new StreamObserver<RouteNote>() {
 					@Override
 					public void onNext(RouteNote note) {
-						System.out.println("·şÎñ¶ËĞ´»Ø: " + note);
+						System.out.println("æœåŠ¡ç«¯å†™å›: " + note);
 					}
 
 					@Override
@@ -191,14 +191,14 @@ public class RouteGuideClient {
 					newNote("Fourth message", 1, 1) };
 
 			for (RouteNote request : requests) {
-				System.out.println("¿Í»§¶ËĞ´Èë:" + request);
+				System.out.println("å®¢æˆ·ç«¯å†™å…¥:" + request);
 				requestObserver.onNext(request);
 			}
 		} catch (RuntimeException e) {
 			requestObserver.onError(e);
 			throw e;
 		}
-		// ±êÊ¶Ğ´Íê
+		// æ ‡è¯†å†™å®Œ
 		requestObserver.onCompleted();
 		return finishLatch;
 	}

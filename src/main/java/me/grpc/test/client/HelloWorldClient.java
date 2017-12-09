@@ -11,10 +11,10 @@ import io.grpc.StatusRuntimeException;
 
 public class HelloWorldClient {
 	
-	private final ManagedChannel channel; //Ò»¸ögRPCĞÅµÀ
-    private final GreeterGrpc.GreeterBlockingStub blockingStub;//×èÈû/Í¬²½ ´æ¸ù
+	private final ManagedChannel channel; //ä¸€ä¸ªgRPCä¿¡é“
+    private final GreeterGrpc.GreeterBlockingStub blockingStub;//é˜»å¡/åŒæ­¥ å­˜æ ¹
 
-   //³õÊ¼»¯ĞÅµÀºÍ´æ¸ù
+   //åˆå§‹åŒ–ä¿¡é“å’Œå­˜æ ¹
     public HelloWorldClient(String host,int port){
         this(ManagedChannelBuilder.forAddress(host, port)
                                   // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
@@ -32,17 +32,17 @@ public class HelloWorldClient {
         channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
-    //¿Í»§¶Ë·½·¨
+    //å®¢æˆ·ç«¯æ–¹æ³•
     public  void greet(String name){
         HelloRequest request = HelloRequest.newBuilder().setName(name).build();
         HelloReply response;
         try {
             response = blockingStub.sayHello(request);
         } catch (StatusRuntimeException e) {
-            System.out.println("RPCµ÷ÓÃÊ§°Ü:"+e.getMessage());
+            System.out.println("RPCè°ƒç”¨å¤±è´¥:"+e.getMessage());
             return;
         }
-        System.out.println("·şÎñÆ÷·µ»ØĞÅÏ¢:"+response.getMessage());
+        System.out.println("æœåŠ¡å™¨è¿”å›ä¿¡æ¯:"+response.getMessage());
     }
 
     public static void main(String[] args) throws InterruptedException {

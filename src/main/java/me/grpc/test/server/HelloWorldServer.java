@@ -15,7 +15,7 @@ public class HelloWorldServer {
     private Server server;
 
     /**
-     * Æô¶¯·şÎñ
+     * å¯åŠ¨æœåŠ¡
      * @throws IOException
      */
     private void start() throws IOException {
@@ -43,7 +43,7 @@ public class HelloWorldServer {
         }
     }
 
-    // block Ò»Ö±µ½ÍË³ö³ÌĞò
+    // block ä¸€ç›´åˆ°é€€å‡ºç¨‹åº
     private void blockUntilShutdown() throws InterruptedException {
         if (server != null) {
             server.awaitTermination();
@@ -58,18 +58,18 @@ public class HelloWorldServer {
     }
 
 
-    // ÊµÏÖ ¶¨ÒåÒ»¸öÊµÏÖ·şÎñ½Ó¿ÚµÄÀà
+    // å®ç° å®šä¹‰ä¸€ä¸ªå®ç°æœåŠ¡æ¥å£çš„ç±»
     private class GreeterImpl extends GreeterGrpc.GreeterImplBase {
 
         public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
-            //»ñÈ¡²ÎÊı
-            System.out.println("ÊÕµ½µÄĞÅÏ¢:"+req.getName());
+            //è·å–å‚æ•°
+            System.out.println("æ”¶åˆ°çš„ä¿¡æ¯:"+req.getName());
 
-            //ÕâÀï¿ÉÒÔ·ÅÖÃ¾ßÌåÒµÎñ´¦Àí´úÂë start
+            //è¿™é‡Œå¯ä»¥æ”¾ç½®å…·ä½“ä¸šåŠ¡å¤„ç†ä»£ç  start
 
-            //ÕâÀï¿ÉÒÔ·ÅÖÃ¾ßÌåÒµÎñ´¦Àí´úÂë end
+            //è¿™é‡Œå¯ä»¥æ”¾ç½®å…·ä½“ä¸šåŠ¡å¤„ç†ä»£ç  end
 
-            //¹¹Ôì·µ»Ø
+            //æ„é€ è¿”å›
             HelloReply reply = HelloReply.newBuilder().setMessage(("Hello: " + req.getName())).build();
             responseObserver.onNext(reply);
             responseObserver.onCompleted();
